@@ -2,8 +2,6 @@
  * particle_filter.h
  *
  * 2D particle filter class.
- *  Created on: Dec 12, 2016
- *      Author: Tiffany Huang
  */
 
 #ifndef PARTICLE_FILTER_H_
@@ -26,12 +24,13 @@ struct Particle {
 
 
 class ParticleFilter {
-	
+  std::default_random_engine gen;
+
 	// Number of particles to draw
 	int num_particles; 
 	
-	
-	
+
+
 	// Flag, if filter is initialized
 	bool is_initialized;
 	
@@ -39,7 +38,7 @@ class ParticleFilter {
 	std::vector<double> weights;
 	
 public:
-	
+
 	// Set of current particles
 	std::vector<Particle> particles;
 
